@@ -16,7 +16,6 @@ def prepare(only_nlp, path):
 
     df['Type'] = df['Type'].map({'Spam': 1, 'Quality': 0})
     df.reset_index(drop=True)
-   # print(df.head())
     return df
-#prepare(True, 'resources/train.csv')
+
 
