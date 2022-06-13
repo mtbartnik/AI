@@ -38,6 +38,7 @@ vocab_size = len(tokenizer.word_index) + 1
 X_train = pad_sequences(X_train, padding='post', maxlen=maxlen)
 X_test = pad_sequences(X_test, padding='post', maxlen=maxlen)
 
+
 def create_embedding_matrix(filepath, word_index, embedding_dim):
     vocab_size = len(word_index) + 1
     # Adding again 1 because of reserved 0 index
@@ -58,8 +59,6 @@ embedding_dim = 50
 embedding_matrix = create_embedding_matrix('resources/glove.6B.50d.txt',
                                            tokenizer.word_index,
                                            embedding_dim)
-
-embedding_dim = 100
 
 model = Sequential()
 model.add(layers.Embedding(vocab_size, embedding_dim, input_length=maxlen))
